@@ -1,7 +1,6 @@
-## The idea behind this assignment is cache the inverse of a matrix
+## The idea behind this assignment is to cache the inverse of a matrix
 ## and thus save the time necessary to compute it over and over again.
 ## The first function, makeCacheMatrix, sets the values of the matrix and its inverse.
-
 
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
@@ -19,9 +18,10 @@ makeCacheMatrix <- function(x = matrix()) {
     list(set=set, get=get, setinverse=setinverse, getinverse=getinverse)
 }
 
-## The second function, cacheSolve, gives us the inverse of the matrix. The function checks to see
-## if the inverse has already been calculated, and if has been the function presents the result without doing any
-## computation. 
+## The second function, cacheSolve, gives us the inverse of the matrix. 
+## The function checks to see if the inverse has already been calculated, 
+## and if this is the case, the function presents the result without doing any
+## calculation. 
 
 cacheSolve <- function(x, ...) {
     inv <- x$getinverse()
@@ -29,8 +29,9 @@ cacheSolve <- function(x, ...) {
         message("getting cached data")
         return(inv)
     }
-## If the inverse has not been calculated, the function does this calculation and then sets the inverted matrix's value in the cache
-## through the setinverse function (setinv).
+## If the inverse has not been calculated, the function does this calculation and 
+## then sets the inverted matrix's value in the cache
+## through the setinverse function (setinv) and then returns the inverted matrix.
       matrix.data = x$get()
         inv = solve(matrix.data, ...)
         
